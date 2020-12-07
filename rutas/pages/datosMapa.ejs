@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula el sueldo de los empleados</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="public/scriptsMapa.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+    <h1 class="display-4">Mostrar usuarios TI02SM-19</h1>
+
+<!--MENU-->    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Datos mapa</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Mostrar datos <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <a href="/logout" class="btn btn-danger">Logout</a>
+      <form id="busqueda" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" id="buscar" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+<!--FIN MENU-->
+
+    <div class="text-dark">
+        Muestra el mapa<br>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <div class="card mt-3">
+                <div class="card-header bg-primary text-white h3">
+                    Capturar datos
+                </div>
+                <div class="card-body">
+                    <form id="enviarDatos">
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="nombre">Tienda:</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" name="tienda" id="tienda" class="form-control">
+                            </div>
+                        </div>
+                
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <label for="sueldo">Direccion:</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" name="direccion" id="direccion" class="form-control">
+                            </div>
+                        </div>
+                
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <label for="horas">Latitud:</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" name="latitud" id="latitud" class="form-control">
+                            </div>
+                        </div>
+                
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <label for="horas">Longitud:</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" name="longitud" id="longitud" class="form-control">
+                            </div>
+                        </div>                        
+                
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <input type="hidden" name="tipo" id="tipo" value="guardar">
+                                <input type="hidden" name="id" id="id" value="">
+                                <button type="submit" class="form-control btn btn-primary" id="boton">Insertar datos</button>
+                            </div>
+                        </div>
+                
+                    </form>                    
+                </div>
+                <div id="mensaje" class="card-footer bg-success text-white"></div>
+            </div>
+        </div>
+        <div  class="col-lg-8 col-md-12">
+            <div class="card mt-3">
+                <div class="card-header bg-primary text-white h3">
+                    Datos de usuarios TI02SM-19
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Status</th>
+                            <th colspan="2" scope="col">Editar/Borrar</th>
+                          </tr>
+                        </thead>
+                        <tbody id="empleados">
+                                
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+
